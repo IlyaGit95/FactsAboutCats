@@ -28,7 +28,7 @@ public class Main {
             List<Cat> cats = mapper.readValue(response.getEntity().getContent(),
                     new TypeReference<>() {
                     });
-            cats.stream().filter(value -> value.getUpvotes() != null && Integer.parseInt(value.getUpvotes()) > 0)
+            cats.stream().filter(value -> value.getUpvotes() != null && value.getUpvotes() > 0)
                     .forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
